@@ -11,36 +11,41 @@ class Juegos {
         this.nombreJuego = nombreJuego;
         this.nombreJugador = nombreJugador;
         this.instruccionesJuego = {
-        ppt: `Debes elegir entre piedra, papel o tijera. Cuando alguno de los dos jugadores llegue a 3 partidas ganadas, el juego terminará. \n 
-                    - La piedra aplasta las tijeras.\n 
-                    - El papel envuelve la piedra.\n 
-                    - las tijeras cortan el papel.`,
-        a: `Debes adivinar la palabra antes de que se completen 10 rondas.\n 
-                    Adivina las letras una por una, si está presente en la palabra, aparecerá en su posicion correspondiente`,
+            ppt: `
+                <p>Debes elegir entre piedra, papel o tijera.</p><p>Cuando alguno de los dos jugadores llegue a 3 partidas ganadas, el juego terminará.</p>
+                            <p>- La piedra aplasta las tijeras.</p> 
+                            <p>- El papel envuelve la piedra.</p> 
+                            <p>- las tijeras cortan el papel.</p>
+            `,
+            a: `
+                <p>Debes adivinar la palabra antes de que se completen 10 rondas.
+                            <p>Adivina las letras una por una, si está presente en la palabra, aparecerá en su posicion correspondiente
+            `,
         };
     }
 
     mostrarNombre() {
-        const divJuego = document.getElementById("juegoElegido");
-
-        divJuego.innerHTML = `
-            <h2 class="tituloJuego">${nombresJuegos[this.nombreJuego]}</h2>
-            <div class = "form">
-                <input type="text" id="nombre" placeholder="Ingresa tu nombre">
-                <button id="nombrebtn">></button>
-            </div>
-        `;
-
         let nombre = document.getElementById("nombre");
         let nombrebtn = document.getElementById("nombrebtn");
 
         nombrebtn.addEventListener("click", () => {
             this.nombreJugador = nombre.value;
-            this.mostrarInstrucciones();
+            localStorage.setItem("nombreJugador", this.nombreJugador);
+            console.log(this.nombreJugador);
+            this.ocultarNombre();
+            this.mostrarJuegos();
         });
 
-        let tituloJuego = document.querySelector("#juegoElegido h2");
-        tituloJuego.classList.add(this.nombreJuego);
+    }
+
+    ocultarNombre() {
+        let ocultarNombre = document.getElementById("form");
+        ocultarNombre.style.display = "none";
+    }
+
+    mostrarJuegos() {
+        const juegosDisponibles = document.querySelector(".juegosDisponibles");
+        juegosDisponibles.style.display = "flex";
     }
 
     mostrarInstrucciones() {
@@ -49,11 +54,10 @@ class Juegos {
         divJuego.innerHTML = `
             <h2 class="tituloJuego">${nombresJuegos[this.nombreJuego]}</h2>
             <div class="inst">
-                <p class="instruccionesJuego">${this.instruccionesJuego[this.nombreJuego]}</p>
+                <p class="instruccionesJuego">${this.nombreJugador}, ${this.instruccionesJuego[this.nombreJuego]}</p>
                 <button id="jugarbtn">Jugar</button>
             </div>
         `;
-
         let jugarbtn = document.getElementById("jugarbtn");
 
         jugarbtn.addEventListener("click", () => {
@@ -77,13 +81,25 @@ class Juegos {
     }
 }
 
-const juego = document.querySelectorAll(".juego");
+document.addEventListener("DOMContentLoaded", () => {
+    let nombreJugador = localStorage.getItem("nombreJugador");
+    const juegosDisponibles = document.querySelector(".juegosDisponibles");
+    const juego = document.querySelectorAll(".juego");
 
-juego.forEach((link) => {
-    link.addEventListener("click", () => {
-        let nombreJuego = link.classList[1];
-        const juego = new Juegos(nombreJuego);
-        juego.mostrarNombre();
+    juegosDisponibles.style.display = "none";
+
+    juego.forEach((link) => {
+        link.addEventListener("click", () => {
+            let nombreJuego = link.classList[1];
+            const juegos = new Juegos(nombreJuego, nombreJugador);
+            juegos.mostrarInstrucciones();
+        });
     });
+
+    const juegos = new Juegos(nombreJugador);
+    juegos.mostrarNombre();
 });
+
+
+
 

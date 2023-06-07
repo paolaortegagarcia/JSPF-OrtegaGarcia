@@ -1,9 +1,37 @@
+#form {
+
+    #nombre {
+        font-family: 'Orbitron', sans-serif;
+        font-size: 15px;
+        padding: 10px;
+        border: 5px solid hsla(120, 9%, 7%, 0.205);
+    }
+
+    #nombrebtn {
+        font-family: 'Orbitron', sans-serif;
+        font-size: 20px;
+        padding: 10px 20px;
+        background-color: hsla(120, 2%, 35%, 0.833);
+        color: black;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+            background-color: rgb(153, 152, 152);
+            color: black;
+        }
+
+    }
+}
+
+
 #juegoElegido {
 
     .tituloJuego {
         font-family: 'Orbitron', sans-serif;
         font-size: 100px;
         margin-bottom: 50px;
+        padding-left: 40px;
     }
 
     .ppt {
@@ -21,16 +49,18 @@
         font-family: 'Orbitron', sans-serif;
     }
 
-    .form {
+    .inst {
         padding-bottom: 700px;
-        #nombre {
+        padding-left: 50px;
+
+        p {
+            color: white;
             font-family: 'Orbitron', sans-serif;
-            font-size: 20px;
-            padding: 10px;
-            border: 5px solid hsla(120, 9%, 7%, 0.205);
         }
-    
-        #nombrebtn {
+        
+
+        #jugarbtn {
+            margin-top: 50px;
             font-family: 'Orbitron', sans-serif;
             font-size: 20px;
             padding: 10px 20px;

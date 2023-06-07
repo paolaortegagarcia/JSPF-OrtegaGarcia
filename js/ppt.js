@@ -1,4 +1,44 @@
-function jugarPPT(nombreJugador) {
+function jugarPPT(nombreJugador){
+
+    let partidasGanadasJugador = 0;
+    let partidasGanadasComputadora = 0;
+    const nombreComputadora = "Computadora";
+    debugger
+    const opcionesJugador = ['Piedra', 'Papel', 'Tijera'];
+    const eleccionComputadora = opcionesJugador[Math.floor(Math.random() * opcionesJugador.length)];
+    console.log(eleccionComputadora);
+
+    const espacioJuego = document.getElementById("juegoElegido");
+    const divJuego = document.createElement("div");
+    divJuego.classList.add("containerPPT");
+
+    espacioJuego.appendChild(divJuego);
+
+    const botones = document.createElement("div");
+    botones.classList.add("opciones");
+
+    opcionesJugador.forEach((opcion) => {
+        const boton = document.createElement("button");
+        boton.classList.add(`${opcion.toLowerCase()}`);
+        boton.textContent = opcion;
+
+        botones.appendChild(boton);
+    })
+    divJuego.appendChild(botones);
+
+
+    
+
+
+
+
+
+
+
+
+}
+
+/* function jugarPPT(nombreJugador) {
     let partidasGanadasJugador = 0;
     let partidasGanadasComputadora = 0;
     let i = 1;
@@ -44,6 +84,6 @@ function jugarPPT(nombreJugador) {
     } else if (partidasGanadasJugador < partidasGanadasComputadora) {
         alert(`La ${nombreComputadora} ganó el juego en ${i} rondas!!`);
     }
-}
+} */
 
 export { jugarPPT };

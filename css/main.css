@@ -55,8 +55,7 @@ main .juegosDisponibles a {
 main .juegosDisponibles a:hover {
   background: #03e9f4;
   color: #050801;
-  box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 200px #03e9f4;
-  -webkit-box-reflect: below 1px linear-gradient(transparent, rgba(0, 0, 0, 0.3333333333));
+  box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4;
 }
 main .juegosDisponibles a:nth-child(1) {
   filter: hue-rotate(270deg);
@@ -74,7 +73,6 @@ main .juegosDisponibles a span:nth-child(1) {
   width: 100%;
   height: 2px;
   background: linear-gradient(90deg, transparent, #03e9f4);
-  animation: animate1 1s linear infinite;
 }
 main .juegosDisponibles a span:nth-child(2) {
   top: -100%;
@@ -82,7 +80,7 @@ main .juegosDisponibles a span:nth-child(2) {
   width: 2px;
   height: 100%;
   background: linear-gradient(180deg, transparent, #03e9f4);
-  animation: animate2 1s linear infinite;
+  animation: animate2 2s linear infinite;
   animation-delay: 0.25s;
 }
 main .juegosDisponibles a span:nth-child(3) {
@@ -91,7 +89,6 @@ main .juegosDisponibles a span:nth-child(3) {
   width: 100%;
   height: 2px;
   background: linear-gradient(270deg, transparent, #03e9f4);
-  animation: animate3 1s linear infinite;
   animation-delay: 0.5s;
 }
 main .juegosDisponibles a span:nth-child(4) {
@@ -100,8 +97,7 @@ main .juegosDisponibles a span:nth-child(4) {
   width: 2px;
   height: 100%;
   background: linear-gradient(360deg, transparent, #03e9f4);
-  animation: animate4 1s linear infinite;
-  animation-delay: 0.75s;
+  animation: animate4 2s linear infinite;
 }
 
 #juegoElegido {
@@ -152,10 +148,31 @@ main .juegosDisponibles a span:nth-child(4) {
     bottom: 100%;
   }
 }
+#form #nombre {
+  font-family: "Orbitron", sans-serif;
+  font-size: 15px;
+  padding: 10px;
+  border: 5px solid hsla(120, 9%, 7%, 0.205);
+}
+#form #nombrebtn {
+  font-family: "Orbitron", sans-serif;
+  font-size: 20px;
+  padding: 10px 20px;
+  background-color: hsla(120, 2%, 35%, 0.833);
+  color: black;
+  border: none;
+  cursor: pointer;
+}
+#form #nombrebtn:hover {
+  background-color: rgb(153, 152, 152);
+  color: black;
+}
+
 #juegoElegido .tituloJuego {
   font-family: "Orbitron", sans-serif;
   font-size: 100px;
   margin-bottom: 50px;
+  padding-left: 40px;
 }
 #juegoElegido .ppt {
   color: #03e9f4;
@@ -169,16 +186,16 @@ main .juegosDisponibles a span:nth-child(4) {
   color: white;
   font-family: "Orbitron", sans-serif;
 }
-#juegoElegido .form {
+#juegoElegido .inst {
   padding-bottom: 700px;
+  padding-left: 50px;
 }
-#juegoElegido .form #nombre {
+#juegoElegido .inst p {
+  color: white;
   font-family: "Orbitron", sans-serif;
-  font-size: 20px;
-  padding: 10px;
-  border: 5px solid hsla(120, 9%, 7%, 0.205);
 }
-#juegoElegido .form #nombrebtn {
+#juegoElegido .inst #jugarbtn {
+  margin-top: 50px;
   font-family: "Orbitron", sans-serif;
   font-size: 20px;
   padding: 10px 20px;
@@ -187,7 +204,7 @@ main .juegosDisponibles a span:nth-child(4) {
   border: none;
   cursor: pointer;
 }
-#juegoElegido .form #nombrebtn:hover {
+#juegoElegido .inst #jugarbtn:hover {
   background-color: rgb(153, 152, 152);
   color: black;
 }/*# sourceMappingURL=main.css.map */
