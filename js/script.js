@@ -4,9 +4,11 @@ import { jugarA } from './a.js';
 const nombresJuegos = {
     ppt: "Piedra, Papel o Tijera",
     a: "Ahorcado",
+    ttt: "Ta Te Ti"
 };
 
 class Juegos {
+    
     constructor(nombreJuego, nombreJugador) {
         this.nombreJuego = nombreJuego;
         this.nombreJugador = nombreJugador;
@@ -61,13 +63,26 @@ class Juegos {
         let jugarbtn = document.getElementById("jugarbtn");
 
         jugarbtn.addEventListener("click", () => {
+            jugarbtn.disabled = false;
             this.iniciarJuego();
+            jugarbtn.disabled = true;
         });
 
         let tituloJuego = document.querySelector("#juegoElegido h2");
         let instruccionesJuego = document.querySelector("#juegoElegido p");
         tituloJuego.classList.add(this.nombreJuego);
         instruccionesJuego.classList.add("instruccionesJuego");
+
+        if (this.nombreJuego === "ttt") {
+            jugarbtn.addEventListener("click", () => {
+                Toastify({
+                    text: "Disponible Próximamente!",
+                    duration: 3000
+                }).showToast();
+            });
+        }
+
+
     }
 
     iniciarJuego() {
@@ -77,6 +92,12 @@ class Juegos {
         } else if (this.nombreJuego === "a") {
             console.log("Comienza el juego del Ahorcado");
             jugarA(this.nombreJugador);
+        } else if (this.nombreJuego === "ttt") {
+            console.log("Comienza el juego ta te ti");
+            Toastify({
+                text: "Disponible Proximamemente!",
+                duration: 3000
+            }).showToast();
         }
     }
 }
@@ -92,7 +113,17 @@ document.addEventListener("DOMContentLoaded", () => {
         link.addEventListener("click", () => {
             let nombreJuego = link.classList[1];
             const juegos = new Juegos(nombreJuego, nombreJugador);
-            juegos.mostrarInstrucciones();
+            
+            if (nombreJuego === "ttt") {
+                Toastify({
+                    text: "Disponible Próximamente!",
+                    duration: 3000
+                }).showToast();
+                
+            } else {
+                juegos.mostrarInstrucciones();
+            }
+
         });
     });
 

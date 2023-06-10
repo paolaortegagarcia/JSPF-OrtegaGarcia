@@ -1,0 +1,79 @@
+.containerPPT {
+    padding: 10px 10px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    
+    .contenedorJuego {
+        font-family: 'Orbitron', sans-serif;
+        display: flex;
+        gap: 30px;
+
+        .opciones {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+
+            button {
+                font-family: 'Orbitron', sans-serif;
+                font-size: 20px;
+                padding: 10px 20px;
+                background-color: hsla(120, 2%, 35%, 0.833);
+                color: black;
+                border-radius: 10px;
+                cursor: pointer;
+        
+                &:hover {
+                    background-color: rgb(153, 152, 152);
+                    color: black;
+            }
+            }
+    
+        }
+
+        .eleccionJugador {
+            border: 10px solid #03e9f4;
+            filter: hue-rotate(270deg);
+            padding: 100px 200px;
+            color: #03e9f4;
+            filter: hue-rotate(270deg);
+
+            .eleccionJugadorTitulo {
+                margin-bottom: 50px;
+            }
+
+        }
+
+        .eleccionComputadora {
+            border: 10px solid white;
+            padding: 100px 200px;
+            color: white;
+
+            .eleccionComputadoraTitulo {
+                margin-bottom: 50px;
+            }
+        }
+
+        .resultadoJuego {
+            padding: 0 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex-wrap: wrap;
+            background-color:#03e9f4;
+            filter: hue-rotate(270deg);
+            gap: 50px;
+            
+        }
+
+
+
+
+    }
+
+    
+
+
+
+
+}

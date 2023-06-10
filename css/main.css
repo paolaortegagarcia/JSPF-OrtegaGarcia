@@ -168,6 +168,9 @@ main .juegosDisponibles a span:nth-child(4) {
   color: black;
 }
 
+#juegoElegido {
+  padding-bottom: 500px;
+}
 #juegoElegido .tituloJuego {
   font-family: "Orbitron", sans-serif;
   font-size: 100px;
@@ -187,7 +190,7 @@ main .juegosDisponibles a span:nth-child(4) {
   font-family: "Orbitron", sans-serif;
 }
 #juegoElegido .inst {
-  padding-bottom: 700px;
+  padding-bottom: 70px;
   padding-left: 50px;
 }
 #juegoElegido .inst p {
@@ -207,4 +210,62 @@ main .juegosDisponibles a span:nth-child(4) {
 #juegoElegido .inst #jugarbtn:hover {
   background-color: rgb(153, 152, 152);
   color: black;
+}
+
+.containerPPT {
+  padding: 10px 10px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+.containerPPT .contenedorJuego {
+  font-family: "Orbitron", sans-serif;
+  display: flex;
+  gap: 30px;
+}
+.containerPPT .contenedorJuego .opciones {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.containerPPT .contenedorJuego .opciones button {
+  font-family: "Orbitron", sans-serif;
+  font-size: 20px;
+  padding: 10px 20px;
+  background-color: hsla(120, 2%, 35%, 0.833);
+  color: black;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.containerPPT .contenedorJuego .opciones button:hover {
+  background-color: rgb(153, 152, 152);
+  color: black;
+}
+.containerPPT .contenedorJuego .eleccionJugador {
+  border: 10px solid #03e9f4;
+  filter: hue-rotate(270deg);
+  padding: 100px 200px;
+  color: #03e9f4;
+  filter: hue-rotate(270deg);
+}
+.containerPPT .contenedorJuego .eleccionJugador .eleccionJugadorTitulo {
+  margin-bottom: 50px;
+}
+.containerPPT .contenedorJuego .eleccionComputadora {
+  border: 10px solid white;
+  padding: 100px 200px;
+  color: white;
+}
+.containerPPT .contenedorJuego .eleccionComputadora .eleccionComputadoraTitulo {
+  margin-bottom: 50px;
+}
+.containerPPT .contenedorJuego .resultadoJuego {
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #03e9f4;
+  filter: hue-rotate(270deg);
+  gap: 50px;
 }/*# sourceMappingURL=main.css.map */
