@@ -73,16 +73,6 @@ class Juegos {
         tituloJuego.classList.add(this.nombreJuego);
         instruccionesJuego.classList.add("instruccionesJuego");
 
-        if (this.nombreJuego === "ttt") {
-            jugarbtn.addEventListener("click", () => {
-                Toastify({
-                    text: "Disponible Próximamente!",
-                    duration: 3000
-                }).showToast();
-            });
-        }
-
-
     }
 
     iniciarJuego() {
