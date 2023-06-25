@@ -192,8 +192,6 @@ main .juegosDisponibles a span:nth-child(4) {
 #juegoElegido .inst {
   padding-bottom: 70px;
   padding-left: 50px;
-}
-#juegoElegido .inst p {
   color: white;
   font-family: "Orbitron", sans-serif;
 }

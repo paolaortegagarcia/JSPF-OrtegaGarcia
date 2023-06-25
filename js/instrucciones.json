@@ -1,0 +1,13 @@
+{
+    "ppt": {
+        "texto": "Debes elegir entre piedra, papel o tijera. Cuando alguno de los dos jugadores llegue a 3 partidas ganadas, el juego terminará.",
+        "reglas": [
+        "La piedra aplasta las tijeras.",
+        "El papel envuelve la piedra.",
+        "Las tijeras cortan el papel."
+        ]
+    },
+    "a": {
+        "texto": "Debes adivinar la palabra antes de que se completen 10 rondas. Adivina las letras una por una, si está presente en la palabra, aparecerá en su posición correspondiente."
+    }
+}
